@@ -1,0 +1,15 @@
+export HISTTIMEFORMAT="%d/%m/%y %T "
+export PATH=/usr/local/sbin:/Users/easton/SCRIPTS:$PATH
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+PATH="/Users/easton/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/easton/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/easton/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/easton/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/easton/perl5"; export PERL_MM_OPT;
+
+export GOPATH=/Users/easton/GO_PATH
+export GOROOT=/usr/local/go/
+export PATH=$PATH:$GOPATH/bin
+
+export NODE_PATH=/usr/local/lib/node_modules/:$NODE_PATH

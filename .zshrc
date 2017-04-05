@@ -92,7 +92,7 @@ load() {
 }
 # dotfiles
 # shortcut to this dotfiles path is $DOTFILES
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES=$HOME/.extra
 if [ -d "$DOTFILES" ];
 then
   # all of our zsh files
@@ -132,7 +132,7 @@ alias . source
 # show and hide dotfiles
 alias show='defaults write com.apple.finder AppleShowAllFiles YES'
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO'
-alias vim='nvim'
+
 # shortcut for Emacs
 alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c --no-wait'
 alias emacs='emacs -q --load /Users/easton/.eastonmacs.el'
@@ -155,3 +155,4 @@ mov2gif () { ffmpeg -i $1 -s 1280x800 -pix_fmt rgb24 -r 24 -f gif - | gifsicle -
 
 # set pyenv autocomplete
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

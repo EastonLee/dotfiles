@@ -1,5 +1,3 @@
-source /Users/easton/.bashrc
-
 # Homebrew bin
 export PATH=/usr/local/bin:$PATH
 # user Python
