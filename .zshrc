@@ -51,7 +51,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow brew zsh-completions)
+plugins=(git git-flow brew zsh-completions autoenv aws battery bower brew docker gem lein nmap node npm osx pip rbenv ruby rvm sublime supervisor tmux vagrant virtualenv )
 source $ZSH/oh-my-zsh.sh
 autoload -U compinit && compinit
 
@@ -156,3 +156,7 @@ mov2gif () { ffmpeg -i $1 -s 1280x800 -pix_fmt rgb24 -r 24 -f gif - | gifsicle -
 # set pyenv autocomplete
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+# RVM must be initialized after pyenv, rvm path must be the first in PATH
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+

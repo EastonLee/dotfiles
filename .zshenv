@@ -13,8 +13,6 @@ export PYTHONUNBUFFERED=1
 
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin" 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 # tell armitage where is the postgres config file
 export MSF_DATABASE_CONFIG=/usr/local/share/metasploit-framework/config/database.yml
 #support msf
