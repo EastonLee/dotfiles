@@ -8,6 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
+ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +52,8 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow brew zsh-completions autoenv aws battery bower brew docker gem lein nmap node npm osx pip rbenv ruby rvm sublime supervisor tmux vagrant virtualenv )
+# plugins=(git git-flow zsh-completions autoenv aws battery bower brew docker docker-compose gem lein nmap node npm osx pip sublime supervisor tmux vagrant virtualenv )
+#plugins=(git zsh-completions autoenv lein node npm osx pip sublime supervisor tmux virtualenv )
 source $ZSH/oh-my-zsh.sh
 autoload -U compinit && compinit
 
@@ -62,11 +64,11 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -123,7 +125,7 @@ if [ -d "$DOTFILES" ];
   unset config_files
 fi
 
-alias ll='ls -l'
+alias ll='ls -la'
 alias la='ls -a'
 alias vi='vim'
 alias javac="javac -J-Dfile.encoding=utf8"
@@ -135,7 +137,7 @@ alias hide='defaults write com.apple.finder AppleShowAllFiles NO'
 
 # shortcut for Emacs
 alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c --no-wait'
-alias emacs='emacs -q --load /Users/easton/.eastonmacs.el'
+#alias emacs='emacs -q --load /Users/easton/.eastonmacs.el'
 alias tsh='trash'
 
 # associate file type with apps
@@ -158,5 +160,14 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 # RVM must be initialized after pyenv, rvm path must be the first in PATH
 # Load RVM into a shell session *as a function*
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin" 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
+# make agnoster work in all interfaces
+export SEGMENT_SEPARATOR=''
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+export NODE_PATH=/Users/easton/.nvm/versions/node/v8.0.0/lib/node_modules/
